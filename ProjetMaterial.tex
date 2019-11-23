@@ -1,16 +1,48 @@
 \documentclass[aspectratio=43]{beamer}
+%encoding
+%--------------------------------------
 \usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+%--------------------------------------
 \usepackage{multicol}
+
+%French-specific commands
+%--------------------------------------
+\usepackage[english,french]{babel}
+\usepackage[autolanguage]{numprint}
+\usepackage{url}            % Pour citer les adresses web
+
+%%% Pour L'utilisation de Python
+\usepackage{minted}
+\usemintedstyle{friendly}
+
+\usepackage{graphicx} % inclusion des graphiques
+\usepackage{wrapfig}  % Dessins dans le texte.
+
+\usepackage{tikz}     % Un package pour les dessins (utilisé pour l'environnement {code})
+\usepackage[framemethod=TikZ]{mdframed}
+\usepackage{booktabs} % Allows the use of \toprule, \midrule and \bottomrule in tables
+%\setbeamertemplate{navigation symbols}
+
+%\setbeamercovered{transparent}
+
+\setbeamertemplate{footline}[frame number]
+%--------------------------------------
+
+\AtBeginDocument{\selectlanguage{french}}
 
 \title{Material Design theme \\manual}
 \date{\today}
-\author[Šubert]{Eduard Šubert}
+\author[Amaël]{Amaël JOUSLIN}
 
+\mode<presentation> {
 \usetheme{material}
 
 \useDarkTheme
-\usePrimaryRed
+\usePrimaryBlue
 \useAccentGreen
+}
+
 
 \begin{document}
 
@@ -18,6 +50,7 @@
 \titlepage
 \end{frame}
 
+%--------------------------------------
 \begin{frame}
 \begin{card}
 Material Design theme is a theme for Beamer inspired by Google's Material Design. \\[5mm]
@@ -26,11 +59,15 @@ This manual only covers the theme itself, for more information on Material Desig
 \end{card}
 \end{frame}
 
+%--------------------------------------
+
 \begin{frame}{Table of contents}
 \begin{card}
 \tableofcontents
 \end{card}
 \end{frame}
+
+%--------------------------------------
 
 \section{Setup}
 \begin{frame}{Setup}
@@ -45,6 +82,24 @@ and primary and accent colors.
 \end{card}
 \end{frame}
 
+%--------------------------------------
+
+
+\subsection{TEST}
+\begin{frame}{TEST}
+\begin{card}
+Sous section : 
+{\color{primary}\textbackslash usetheme\{material\}}
+\end{card}
+\begin{card}
+Further you might want to customize the background with: \\[2mm]
+{\color{primary}\textbackslash useLightTheme} or {\color{primary}\textbackslash useDarkTheme} \\[2mm]
+and primary and accent colors.
+\end{card}
+\end{frame}
+
+%--------------------------------------
+
 \begin{frame}{Setup -- colors}
 \begin{card}
 There are some colors from the Material Design guidelines coded in. You access those by: \\[2mm]
@@ -56,6 +111,8 @@ or you can pick your own:\\[2mm]
 {\color{primary} darker primary color} is just darker version of {\color{primary} primary color} and {\color{primary} text color} is color of text on {\color{primary} primary} or {\color{primary} accent colors}.
 \end{card}
 \end{frame}
+
+%--------------------------------------
 
 \section{Card environment}
 \begin{frame}{Card}
@@ -70,6 +127,8 @@ All content should only appear in cards. There are several variants:
 \end{card}
 \end{frame}
 
+%--------------------------------------
+
 \begin{frame}{plain card}
 \begin{card}
 \end{card}
@@ -80,6 +139,8 @@ All content should only appear in cards. There are several variants:
 {\color{primary} \textbackslash end\{card\}}
 \end{card}
 \end{frame}
+
+%--------------------------------------
 
 \begin{frame}{card with a title}
 \begin{card}[Title]
@@ -92,6 +153,8 @@ All content should only appear in cards. There are several variants:
 \end{card}
 \end{frame}
 
+%--------------------------------------
+
 \begin{frame}{card with an image}
 \centering
 \cardImg{img/rudolfinum.jpg}{0.5\textwidth}
@@ -100,6 +163,8 @@ All content should only appear in cards. There are several variants:
 {\color{primary} \textbackslash cardImg\{file name\}\{width\}}
 \end{card}
 \end{frame}
+
+%--------------------------------------
 
 \begin{frame}{tiny card}
 \begin{cardTiny}
@@ -114,6 +179,8 @@ All content should only appear in cards. There are several variants:
 Tiny card is useful for labels where too much whitespace gets in the way. 
 \end{card}
 \end{frame}
+
+%--------------------------------------
 
 \begin{frame}{Cards can be filled with anything you want}
 
@@ -137,9 +204,11 @@ The sum of the areas of the two squares on the legs equals the area of the squar
 \end{card}
 \end{frame}
 
+%--------------------------------------
+
 \section{Image background}
 \begin{frameImg}{img/rudolfinum.jpg}
-\vspace*{60mm}
+\vspace*{55mm}
 \begin{cardTiny}
 Lastly it is possible to set image as a background for a frame:\\[2mm]
 {\color{primary} \textbackslash begin\{frameImg\}["height"]\{file name\}\\[2mm]}
@@ -148,12 +217,16 @@ Lastly it is possible to set image as a background for a frame:\\[2mm]
 \end{cardTiny}
 \end{frameImg}
 
+%--------------------------------------
+
 \begin{frameImg}[height]{img/rudolfinum.jpg}
 \vspace*{60mm}
 \begin{cardTiny}
 Parameter {\color{primary} ["height"]} determines the dimension that is stretched to cover the frame ({\color{primary} ["width"]} is default).
 \end{cardTiny}
 \end{frameImg}
+
+%--------------------------------------
 
 \begin{frame}
 \begin{multicols}{2}
@@ -169,6 +242,8 @@ Two images side by side with columns.
 \end{multicols}
 \end{frame}
 
+%--------------------------------------
+
 \begin{frame}
 \begin{card}
 That is all for now. Despite having successfully presented several project with this theme, it is still work in progress. If this manual is not clear enough, you can also review it's source, that may bring more clarity.
@@ -183,3 +258,5 @@ This theme is released under MIT license. Feel free to modify or improve or what
 \end{frame}
 
 \end{document}
+
+%--------------------------------------
